@@ -1,0 +1,29 @@
+{% extends 'admintemp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h4 align="center">POLICE AUTHORITIES</h4>
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+      <th>SL No.</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Contact Number</th>
+      </thead>
+      {% for i in p %}
+      <tbody>
+      <td>{{forloop.counter}} </td>
+      <td>{{i.first_name}}</td>
+      <td>{{i.last_name}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.contact_no}}</td>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

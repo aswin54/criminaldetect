@@ -1,0 +1,33 @@
+{% extends 'admintemp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h4 align="center">CRIMINALS</h4>
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+      <th>SL No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Crime</th>
+      <th>Place</th>
+      <th>Crime Status</th>
+      <th>Finger Print</th>
+      <th>Photo</th>
+      </thead>
+      {% for i in c %}
+      <tbody>
+      <td>{{forloop.counter}} </td>
+      <td>{{i.name}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.crime}}</td>
+      <td>{{i.place}}</td>
+      <td>{{i.crime_status}}</td>
+      <td><img src="{{i.finger_print.url}}" class="img-thumbnail" style="height:80px;width:80px"></td>
+      <td><img src="{{i.photo.url}}" class="img-thumbnail" style="height:80px;width:80px"></td>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

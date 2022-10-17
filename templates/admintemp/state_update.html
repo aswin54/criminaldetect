@@ -1,0 +1,39 @@
+{% extends 'admintemp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+      <h4 align="center"><u>State Update Form</u></h4>
+      <div class="mb-3">
+        {{form.name|as_crispy_field}}
+      </div>
+
+      <div class="mb-3">
+        {{form.username|as_crispy_field}}
+      </div>
+
+      <div class="mb-3">
+        {{form.password1|as_crispy_field}}
+      </div>
+
+      <div class="mb-3">
+        {{form.password2|as_crispy_field}}
+      </div>
+
+      <div class="mb-3">`
+        {{form.contact_no|as_crispy_field}}
+      </div>
+
+      <div class="mb-3">
+        {{form.email|as_crispy_field}}
+      </div>
+
+      <button type="submit" class="btn btn-primary">Register</button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

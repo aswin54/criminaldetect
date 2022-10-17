@@ -1,0 +1,14 @@
+{% extends 'usertemp/index.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="col-lg-6">
+<div class="card">
+    <div class="card-body">
+        <legend>
+            <h6 style="color:red;">click here to detect criminals!</h6>
+            <a class="btn btn-primary" href="{% url 'detect' %}">Detect</a>
+        </legend>
+    </div>
+</div>
+</div>
+{% endblock %}

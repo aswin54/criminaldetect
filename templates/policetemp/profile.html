@@ -1,0 +1,25 @@
+{% extends 'policetemp/index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<style>
+    .img{
+    border-radius:50%
+    }
+</style>
+<div class="text-center">
+    <div class="card m-auto p-1 mt-5 mb-5" style="width: 18rem;">
+  <img class="card-img-top img p-2" src="{% static 'assets/img/backgrounds/police.jpg' %}" alt="Card image cap">
+  <div class="card-body">
+    {% for i in p %}
+    <h5 class="card-title">{{i.username}}</h5>
+    <p class="card-text">First Name: {{i.first_name}}</p>
+    <p class="card-text">Last Name: {{i.last_name}}</p>
+    <p class="card-text">Contact Number: {{i.contact_no}}</p>
+    <p class="card-text">Email: {{i.email}}</p>
+    <a href="{% url 'profile_edit' i.id %}" class="btn btn-primary">Edit</a>
+    {% endfor %}
+  </div>
+    </div>
+</div>
+{% endblock %}
